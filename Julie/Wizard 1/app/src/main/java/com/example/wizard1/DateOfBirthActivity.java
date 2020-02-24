@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
@@ -18,10 +19,13 @@ public class DateOfBirthActivity extends AppCompatActivity {
     private String address;
     private String date = "hgbjbg";
     CalendarView calendar;
+    private String activity = "Date_Activity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_date_of_birth);
+        Log.i("onCreate", activity);
 
         Intent intent = getIntent();
         name = intent.getStringExtra("name");
@@ -67,5 +71,35 @@ public class DateOfBirthActivity extends AppCompatActivity {
 
     public void finishActivity(){
         finish();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i("onStart", activity);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("onResume", activity);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i("onPause", activity);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("onStop" , activity);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i( "onDestroy", activity);
     }
 }
