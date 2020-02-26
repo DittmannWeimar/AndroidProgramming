@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">WizardApp</string>
+    <string name="enter_name">Enter your name here</string>
+    <string name="enter_address">Enter your address here</string>
+    <string name="nextText">Next</string>
+    <string name="PickBirthDate">Pick your date of birth</string>
+</resources>
