@@ -2,6 +2,7 @@ package com.example.flingcolor;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
@@ -18,7 +19,7 @@ public class Colorview extends View implements GestureDetector.OnGestureListener
 
     private GestureDetectorCompat detector;
 
-    private final int[] colors = {
+    /*private final int[] colors = {
             BLACK,
             DKGRAY,
             GRAY,
@@ -32,7 +33,7 @@ public class Colorview extends View implements GestureDetector.OnGestureListener
             MAGENTA
     };
 
-    private int colourIndex;
+    private int colourIndexr; */
 
     public Colorview(Context context) {
         super(context);
@@ -85,7 +86,7 @@ public class Colorview extends View implements GestureDetector.OnGestureListener
 
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-        if (velocityX > 0) {
+        /*if (velocityX > 0) {
             colourIndex--;
         } else if (velocityX < 0) {
             colourIndex++;
@@ -96,11 +97,22 @@ public class Colorview extends View implements GestureDetector.OnGestureListener
         if (colourIndex < 0) {
             colourIndex = 0;
         }
-        invalidate();
+        invalidate();*/
+
+            if(e1.getX()-e2.getX() < 0 && e1.getY() - e2.getY() < 0){
+                this.setBackgroundColor(Color.BLUE);
+            } else if(e1.getX()-e2.getX() < 0 && e1.getY() - e2.getY() > 0){
+                this.setBackgroundColor(Color.RED);
+            } else if(e1.getX()-e2.getX() > 0 && e1.getY() - e2.getY() < 0){
+                this.setBackgroundColor(Color.GREEN);
+            } else if(e1.getX()-e2.getX() > 0 && e1.getY() - e2.getY() > 0){
+                this.setBackgroundColor(Color.YELLOW);
+            }
+
         return true;
     }
 
-    @Override
+    /*@Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         Paint p = new Paint();
@@ -108,5 +120,5 @@ public class Colorview extends View implements GestureDetector.OnGestureListener
         p.setStyle(Paint.Style.FILL);
         canvas.drawPaint(p);
 
-    }
+    }*/
 }
