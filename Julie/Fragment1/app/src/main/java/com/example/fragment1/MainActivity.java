@@ -30,41 +30,37 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.RedB).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction fragTrans = fragmentManager.beginTransaction();
-                fragTrans.replace(R.id.fragmentLayout, redFrag);
-                fragTrans.addToBackStack(null);
-                fragTrans.commit();
+                updateFragemnt(redFrag);
             }
         });
 
         findViewById(R.id.GreenB).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction fragTrans = fragmentManager.beginTransaction();
-                fragTrans.replace(R.id.fragmentLayout, greenFrag);
-                fragTrans.addToBackStack(null);
-                fragTrans.commit();
+                updateFragemnt(greenFrag);
             }
         });
 
         findViewById(R.id.BlueB).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction fragTrans = fragmentManager.beginTransaction();
-                fragTrans.replace(R.id.fragmentLayout, blueFrag);
-                fragTrans.addToBackStack(null);
-                fragTrans.commit();
+                updateFragemnt(blueFrag);
             }
         });
 
         findViewById(R.id.YellowB).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction fragTrans = fragmentManager.beginTransaction();
-                fragTrans.replace(R.id.fragmentLayout, yellowFrag);
-                fragTrans.addToBackStack(null);
-                fragTrans.commit();
+                updateFragemnt(yellowFrag);
             }
         });
+
+    }
+
+    private void updateFragemnt(Fragment fragment){
+        FragmentTransaction fragTrans = fragmentManager.beginTransaction();
+        fragTrans.replace(R.id.fragmentLayout, fragment);
+        fragTrans.addToBackStack(null);
+        fragTrans.commit();
     }
 }
