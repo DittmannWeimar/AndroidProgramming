@@ -48,11 +48,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
             @Override
             public void onClick(View v) {
                 intArray.add(position, deletedValue);
-                notifyDataSetChanged();
+                notifyItemInserted(position);
             }
         });
         snack.show();
         intArray.remove(position);
-        notifyDataSetChanged();
+        notifyItemRemoved(position);
     }
 }
