@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Blue button
         findViewById(R.id.blueButton).setOnClickListener(new View.OnClickListener() {
+            //my solution
             @Override
             public void onClick(View v) {
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -43,10 +44,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.greenButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, greenFragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                updateFragment(greenFragment);
             }
         });
 
@@ -54,10 +52,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.redButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, redFragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                updateFragment(redFragment);
             }
         });
 
@@ -65,11 +60,16 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.yellowButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, yellowFragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                updateFragment(yellowFragment);
             }
         });
+    }
+
+    //greg's solution
+    private void updateFragment(Fragment wantedFragment){
+        FragmentTransaction fragTrans = fragmentManager.beginTransaction();
+        fragTrans.replace(R.id.fragment_container, wantedFragment);
+        fragTrans.addToBackStack(null);
+        fragTrans.commit();
     }
 }
