@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Fragment1</string>
+    <string name="YellowFra">Yellow</string>
+    <string name="BlueFra">Blue</string>
+    <string name="RedFra">Red</string>
+    <string name="GreenFra">Green</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
