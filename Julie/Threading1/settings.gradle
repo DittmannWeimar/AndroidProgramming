@@ -1,0 +1,2 @@
+rootProject.name='Threading1'
+include ':app'
