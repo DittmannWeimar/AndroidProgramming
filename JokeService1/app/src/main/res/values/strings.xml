@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Joke Service 1</string>
+    <string name="UpdateJoke">Update Joke</string>
+    <string name="UpdateC">Update Counter</string>
+    <string name="NextB">Next</string>
+    <string name="BackB">Back</string>
+</resources>
