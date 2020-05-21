@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">Text sender test app</string>
-    <string name="edit_text">Enter a new message</string>
-    <string name="button_send">Send</string>
-</resources>
