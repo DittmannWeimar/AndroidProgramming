@@ -97,6 +97,7 @@ public class ColorChange extends View implements GestureDetector.OnGestureListen
         }
         return super.onTouchEvent(event);
     }
+    //Hej
 
     @Override
     public boolean onDown(MotionEvent e) {
